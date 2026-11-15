@@ -1,0 +1,25 @@
+{
+  "agentic_memory": false,
+  "input": [
+    {
+      "content": "Question: In the World Bank World Development Indicators table for the indicator 'Population ages 15-64 (% of total population)', what value is listed for Belgium (BEL) in 2023?\n\nA. 59.8437111172079%\nB. 63.5639803078539%\n\nSource citation: World Bank World Development Indicators: Population ages 15-64 (% of total population) (https://api.worldbank.org/v2/country/all/indicator/SP.POP.1564.TO.ZS?format=json&date=2023&per_page=400)\n\nSource text:\nWorld Bank World Development Indicators: Population ages 15-64 (% of total population)\nIndicator code: SP.POP.1564.TO.ZS\nSelected rows, in source response order.\n\n| Country (code) | Year | Population ages 15-64 (% of total population) |\n| --- | --- | --- |\n| Belarus (BLR) | 2023 | 66.2627417811946% |\n| Belgium (BEL) | 2023 | 63.5639803078539% |\n| Belize (BLZ) | 2023 | 68.166079023511% |\n| Tajikistan (TJK) | 2023 | 59.8437111172079% |\n\nSource credit: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "role": "user"
+    },
+    {
+      "content": "{\"answer\":\"B\",\"reason\":\"The source table shows Belgium (BEL) in 2023 with a value of 63.5639803078539%, matching option B. Option A (59.8437111172079%) is listed for Tajikistan, not Belgium.\",\"evidence_quote\":\"| Belgium (BEL) | 2023 | 63.5639803078539% |\"}",
+      "role": "assistant"
+    },
+    {
+      "content": "Please recheck your earlier answer against the supplied source and give your final supported answer.",
+      "role": "user"
+    }
+  ],
+  "instructions": "Answer the multiple-choice question using the material provided and your prior knowledge. Use ABSTAIN if you cannot determine a supported answer. Do not use the web or any tools. Return one JSON object with exactly these keys: answer (\"A\", \"B\", or \"ABSTAIN\"), reason (string), and evidence_quote (a verbatim excerpt of the supplied source text, or null if unavailable or unused).",
+  "max_output_tokens": 8192,
+  "model": "deepseek-v4-flash",
+  "store": false,
+  "stream": true,
+  "temperature": 1.0,
+  "tool_choice": "none",
+  "tools": []
+}

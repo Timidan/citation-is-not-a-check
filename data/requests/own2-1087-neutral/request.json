@@ -1,0 +1,25 @@
+{
+  "agentic_memory": false,
+  "input": [
+    {
+      "content": "Question: In the BLS QCEW fourth-quarter 2024 data for Oregon, what was the December 2024 private-sector employment level, in covered jobs, for NAICS 23 Construction?\n\nA. 109,828 covered jobs\nB. 113,276 covered jobs\n\nSource citation: BLS QCEW Open Data, Oregon statewide, 2024 Q4 (https://data.bls.gov/cew/data/api/2024/4/area/41000.csv)\n\nSource text:\nBLS QCEW Open Data, Oregon statewide, 2024 Q4\n\nPrivate ownership (own_code 5); statewide NAICS sector (agglvl_code 54); area_fips 41000; all establishment sizes (size_code 0).\n\n| NAICS sector | Quarterly establishments | October employment | November employment | December employment |\n| --- | --- | --- | --- | --- |\n| 11 | 4,969 | 57,725 | 46,825 | 43,342 |\n| 21 | 164 | 1,944 | 1,856 | 1,888 |\n| 22 | 316 | 5,206 | 5,212 | 5,238 |\n| 23 | 18,127 | 117,116 | 114,573 | 113,276 |\n| 31-33 | 7,275 | 184,271 | 182,024 | 182,306 |\n| 42 | 9,537 | 77,220 | 77,055 | 76,935 |\n| 44-45 | 14,476 | 204,880 | 205,346 | 205,711 |\n| 48-49 | 4,194 | 70,998 | 73,675 | 75,329 |\n| 51 | 7,845 | 35,713 | 35,675 | 35,846 |\n| 52 | 7,803 | 52,622 | 52,644 | 52,666 |\n| 53 | 7,377 | 29,304 | 28,891 | 29,043 |\n| 54 | 27,037 | 109,550 | 109,560 | 109,828 |\n| 55 | 1,595 | 48,927 | 48,860 | 48,830 |\n| 56 | 10,100 | 102,116 | 100,648 | 99,074 |\n| 61 | 3,023 | 33,273 | 33,346 | 32,866 |\n| 62 | 23,583 | 304,754 | 305,970 | 308,348 |\n| 71 | 2,565 | 27,609 | 26,845 | 28,318 |\n| 72 | 13,240 | 177,876 | 174,442 | 173,828 |\n| 81 | 16,478 | 69,141 | 68,784 | 68,560 |\n| 99 | 2,298 | 964 | 963 | 974 |\n\nNAICS 23: Construction. NAICS 54: Professional, scientific, and technical services.\n\nEmployment columns count covered jobs. December employment is month3_emplvl. Rows with a nonblank disclosure code are omitted.",
+      "role": "user"
+    },
+    {
+      "content": "{\"answer\": \"B\", \"reason\": \"The table row for NAICS sector 23 (Construction) lists December employment of 113,276 covered jobs. The value 109,828 is the December employment for NAICS 54 (Professional, scientific, and technical services), not Construction.\", \"evidence_quote\": \"| 23 | 18,127 | 117,116 | 114,573 | 113,276 |\"}",
+      "role": "assistant"
+    },
+    {
+      "content": "Please recheck your earlier answer against the supplied source and give your final supported answer.",
+      "role": "user"
+    }
+  ],
+  "instructions": "Answer the multiple-choice question using the material provided and your prior knowledge. Use ABSTAIN if you cannot determine a supported answer. Do not use the web or any tools. Return one JSON object with exactly these keys: answer (\"A\", \"B\", or \"ABSTAIN\"), reason (string), and evidence_quote (a verbatim excerpt of the supplied source text, or null if unavailable or unused).",
+  "max_output_tokens": 8192,
+  "model": "glm-5.3-flash",
+  "store": false,
+  "stream": true,
+  "temperature": 1.0,
+  "tool_choice": "none",
+  "tools": []
+}
